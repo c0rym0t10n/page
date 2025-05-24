@@ -23,28 +23,47 @@
         }
 
         .header {
-            padding: 2rem;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0 2rem;
+            height: 600px;
+            text-align: right;
+            background: linear-gradient(to right, rgba(0, 46, 70, 0.95), rgba(0, 46, 70, 0.7)), url('img/hero.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .header::before {
+            display: none;
         }
 
         .header h1 {
             font-family: 'Urbanist', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            line-height: 1.2;
+            text-transform: uppercase;
+            max-width: 800px;
+            background: none;
+            -webkit-text-fill-color: initial;
         }
 
         .header .subtitle {
-            font-size: clamp(1rem, 3vw, 1.2rem);
-            color: #94a3b8;
-            font-weight: 400;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: #4ade80;
+            font-weight: 500;
+            max-width: 600px;
+            opacity: 1;
+            text-align: right;
         }
 
         .nav {
@@ -73,31 +92,29 @@
         }
 
         .section {
-            padding: 3rem 1rem;
+            padding: 3rem 2.5rem;
             max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .section h2 {
-            font-family: 'Urbanist', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            text-align: center;
         }
 
         /* Productos Section */
         .productos-container {
             position: relative;
+            display: flex;
+            justify-content: center;
+            padding: 0 1.5rem;
         }
 
         .productos-scroll {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             overflow-x: auto;
             padding: 1rem 0 2rem 0;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1400px;
         }
 
         .productos-scroll::-webkit-scrollbar {
@@ -115,9 +132,9 @@
         }
 
         .producto-card {
-            flex: 0 0 512px;
-            width: 512px;
-            height: 644px;
+            flex: 0 0 410px;
+            width: 410px;
+            height: 515px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             overflow: hidden;
@@ -147,7 +164,7 @@
 
         .producto-image {
             width: 100%;
-            height: 480px;
+            height: 384px;
             background: #f8fafc;
             display: flex;
             align-items: center;
@@ -202,9 +219,10 @@
         @media (min-width: 768px) {
             .productos-scroll {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
+                grid-template-columns: repeat(auto-fit, 410px);
                 gap: 2rem;
                 overflow: visible;
+                justify-content: center;
             }
 
             .producto-card {
@@ -362,26 +380,25 @@
                 id: 1,
                 titulo: "Banco Fijo Cromado",
                 descripcion: "Banco Fijo Giratorio Cromado Sin Ruedas Estructura Cromo Asiento Cromo.",
-                imagen: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjQ4MCIgdmlld0JveD0iMCAwIDUxMiA0ODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNDgwIiBmaWxsPSIjRjhGQUZDIi8+CjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI0MCIgcj0iNDAiIGZpbGw9IiNFMkU4RjAiLz4KPHRleHQgeD0iMjU2IiB5PSIyNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzY0NzQ4QiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2VuPC90ZXh0Pgo8L3N2Zz4="
+                imagen: "img/banco-fijo.jpg"
             },
             {
                 id: 2,
                 titulo: "Silla de Oficina Ergonómica",
                 descripcion: "Silla ejecutiva con soporte lumbar, brazos ajustables y base cromada de 5 ruedas.",
-                imagen: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjQ4MCIgdmlld0JveD0iMCAwIDUxMiA0ODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNDgwIiBmaWxsPSIjRjhGQUZDIi8+CjxyZWN0IHg9IjE4NiIgeT0iMTYwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE2MCIgZmlsbD0iI0UyRThGMCIvPgo8dGV4dCB4PSIyNTYiIHk9IjI0NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNjQ3NDhCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JbWFnZW48L3RleHQ+Cjwvc3ZnPg=="
+                imagen: "img/silla-ergonomica.jpg"
             },
             {
                 id: 3,
                 titulo: "Mesa de Acero Inoxidable",
                 descripcion: "Mesa de trabajo de acero inoxidable 316L, resistente a corrosión y fácil limpieza.",
-                imagen: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjQ4MCIgdmlld0JveD0iMCAwIDUxMiA0ODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNDgwIiBmaWxsPSIjRjhGQUZDIi8+Cjxwb2x5Z29uIHBvaW50cz0iMTc2LDE4MCAzMzYsMTgwIDM1NiwzMDAgMTU2LDMwMCIgZmlsbD0iI0UyRThGMCIvPgo8dGV4dCB4PSIyNTYiIHk9IjI0NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNjQ3NDhCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JbWFnZW48L3RleHQ+Cjwvc3ZnPg=="
+                imagen: "img/mesa-acero.jpg"
             },
-            // Agrega más productos aquí siguiendo el mismo formato
             {
                 id: 4,
                 titulo: "Carrito Médico",
                 descripcion: "Carrito de servicio con múltiples niveles, ruedas giratorias y estructura cromada.",
-                imagen: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjQ4MCIgdmlld0JveD0iMCAwIDUxMiA0ODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNDgwIiBmaWxsPSIjRjhGQUZDIi8+CjxyZWN0IHg9IjE4NiIgeT0iMTQwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0UyRThGMCIvPgo8dGV4dCB4PSIyNTYiIHk9IjI0NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNjQ3NDhCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JbWFnZW48L3RleHQ+Cjwvc3ZnPg=="
+                imagen: "img/carrito-medico.jpg"
             }
         ];
 
@@ -396,7 +413,7 @@
 
                 productCard.innerHTML = `
                     <div class="producto-image">
-                        <img src="${producto.imagen}" alt="${producto.titulo}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjQ4MCIgdmlld0JveD0iMCAwIDUxMiA0ODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNDgwIiBmaWxsPSIjRjhGQUZDIi8+CjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI0MCIgcj0iNDAiIGZpbGw9IiNFMkU4RjAiLz4KPHRleHQgeD0iMjU2IiB5PSIyNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzY0NzQ4QiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2VuPC90ZXh0Pgo8L3N2Zz4='">
+                        <img src="${producto.imagen}" alt="${producto.titulo}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjQ4MCIgdmlld0JveD0iMCAwIDUxMiA0ODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNDgwIiBmaWxsPSIjRjhGQUZDIi8+CjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI0MCIgcj0iNDAiIGZpbGw9IiNFMkU4RjAiLz4KPHRleHQgeD0iMjU2IiB5PSIyNDUiIGZvcnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzY0NzQ4QiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2VuPC90ZXh0Pgo8L3N2Zz4='">
                     </div>
                     <div class="producto-info">
                         <h3 class="producto-titulo">${producto.titulo}</h3>
