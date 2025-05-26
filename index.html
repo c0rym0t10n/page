@@ -153,14 +153,8 @@
         }
 
         .producto-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
-            z-index: 1;
+            display: none;
+            /* Esto elimina completamente la línea */
         }
 
         .producto-image {
@@ -327,7 +321,7 @@
                 max-width: 410px;
                 margin: 0 auto;
             }
-            
+
             .productos-scroll {
                 padding: 1rem 0.5rem 2rem 0.5rem;
             }
